@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Net;
 using System.Net.Sockets;
+using MyWarServer.Controller;
 
 namespace MyWarServer.Server
 {
@@ -13,6 +14,7 @@ namespace MyWarServer.Server
         private IPEndPoint ipEndPoint;
         private Socket serverSocket;
         private List<Client> clientList = new List<Client>();
+        private ControllerManager controllerManager = new ControllerManager(); // 持有controller
 
         public Server() { }
         /// <summary>
