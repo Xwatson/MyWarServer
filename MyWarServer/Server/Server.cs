@@ -12,6 +12,7 @@ namespace MyWarServer.Server
     {
         private IPEndPoint ipEndPoint;
         private Socket serverSocket;
+        private List<Client> clientList = new List<Client>();
 
         public Server() { }
         /// <summary>
@@ -22,7 +23,6 @@ namespace MyWarServer.Server
         public Server(string ip, int port)
         {
             SetIPEndPoint(ip, port);
-            Start();
         }
         /// <summary>
         /// 设置IPEndPoint
@@ -47,7 +47,18 @@ namespace MyWarServer.Server
         // 异步接受客户端
         private void BeginAcceptCallBack(IAsyncResult ar)
         {
-
+            Socket clientSocket = serverSocket.EndAccept(ar);
+            Client client = new Client(clientSocket, this);
+            client.Start();
+            clientList.Add(client); // 持有所有client类
+        }
+        public void RemoveClient(Client client)
+        {
+            // 加锁防止多个客户端同时关闭导致数据出错
+            lock (clientList)
+            {
+                clientList.Remove(client);
+            }
         }
     }
 }
