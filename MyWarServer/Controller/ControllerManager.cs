@@ -31,6 +31,7 @@ namespace MyWarServer.Controller
         /// </summary>
         /// <param name="requestCode">请求</param>
         /// <param name="actionCode">动作</param>
+        /// <param name="data">数据</param>
         public void RequestHandle(RequestCode requestCode, ActionCode actionCode, string data)
         {
             BaseController baseController;
