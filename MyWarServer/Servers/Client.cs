@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Net;
 using System.Net.Sockets;
+using Common;
 
 namespace MyWarServer.Servers
 {
@@ -37,7 +38,7 @@ namespace MyWarServer.Servers
                     Close();
                 }
                 // 读取数据
-                message.ReadMessage(count);
+                message.ReadMessage(count, OnProcessMessage);
                 // 循环接受消息
                 Start();
             }
@@ -47,6 +48,28 @@ namespace MyWarServer.Servers
                 Console.WriteLine("客户端异常：" + e);
             }
 
+        }
+        /// <summary>
+        /// 接受处理消息事件
+        /// </summary>
+        /// <param name="requestCode"></param>
+        /// <param name="actionCode"></param>
+        /// <param name="data"></param>
+        public void OnProcessMessage(RequestCode requestCode, ActionCode actionCode, string data)
+        {
+            // 交给server处理
+            server.RequestHandle(requestCode, actionCode, data, this);
+        }
+        /// <summary>
+        /// 发送消息到客户端
+        /// </summary>
+        /// <param name="requestCode"></param>
+        /// <param name="data"></param>
+        public void Send(RequestCode requestCode, string data)
+        {
+            byte[] pickData = Message.PickResponseData(requestCode, data);
+            // 发送数据
+            clientSocket.Send(pickData);
         }
         /// <summary>
         /// 关闭客户端连接

@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Common;
 using System.Reflection;
+using MyWarServer.Servers;
 
 // 管理服务器端controller
 namespace MyWarServer.Controller
@@ -12,9 +13,10 @@ namespace MyWarServer.Controller
     class ControllerManager
     {
         private Dictionary<RequestCode, BaseController> controllerDic = new Dictionary<RequestCode, BaseController>();
-
-        public ControllerManager()
+        private Server server;
+        public ControllerManager(Server server)
         {
+            this.server = server;
             Init();
         }
         /// <summary>
@@ -32,7 +34,7 @@ namespace MyWarServer.Controller
         /// <param name="requestCode">请求</param>
         /// <param name="actionCode">动作</param>
         /// <param name="data">数据</param>
-        public void RequestHandle(RequestCode requestCode, ActionCode actionCode, string data)
+        public void RequestHandle(RequestCode requestCode, ActionCode actionCode, string data, Client client)
         {
             BaseController baseController;
             // 获取controller
@@ -51,9 +53,14 @@ namespace MyWarServer.Controller
                 Console.WriteLine("[错误]：未能在Controller[" + baseController.GetType() + "]中没有找到[" + methodName + "]方法。");
                 return;
             }
-            object[] datas = new object[] { data };
+            object[] datas = new object[] { data, client, server };
             // 调用方法
             object result = mi.Invoke(baseController, datas);
+            if (result == null || String.IsNullOrEmpty(result as string))
+            {
+                return;
+            }
+            server.SendResponse(requestCode, result as string, client);
         }
     }
 }
