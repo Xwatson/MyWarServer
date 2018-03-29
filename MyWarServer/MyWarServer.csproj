@@ -87,9 +87,9 @@
     <Folder Include="Model\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Common\Common.csproj">
-      <Project>{b5cee45c-6a9e-4693-ab05-0846182735ae}</Project>
-      <Name>Common</Name>
+    <ProjectReference Include="..\MyWarCommon\MyWarCommon.csproj">
+      <Project>{38d7ccd6-22cd-45de-908f-25b97b826e8a}</Project>
+      <Name>MyWarCommon</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

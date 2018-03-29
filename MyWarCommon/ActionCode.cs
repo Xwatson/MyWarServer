@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Common
+namespace MyWarCommon
 {
     /// <summary>
-    /// 动作code
+    /// 方法code
     /// </summary>
     public enum ActionCode
     {
