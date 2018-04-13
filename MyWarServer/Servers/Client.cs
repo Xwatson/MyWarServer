@@ -65,9 +65,9 @@ namespace MyWarServer.Servers
         /// </summary>
         /// <param name="requestCode"></param>
         /// <param name="data"></param>
-        public void Send(RequestCode requestCode, string data)
+        public void Send(ActionCode actionCode, string data)
         {
-            byte[] pickData = Message.PickResponseData(requestCode, data);
+            byte[] pickData = Message.PickResponseData(actionCode, data);
             // 发送数据
             clientSocket.Send(pickData);
         }

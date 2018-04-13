@@ -60,7 +60,7 @@ namespace MyWarServer.Controller
             {
                 return;
             }
-            server.SendResponse(requestCode, result as string, client);
+            server.SendResponse(actionCode, result as string, client);
         }
     }
 }

@@ -5,8 +5,6 @@ VisualStudioVersion = 15.0.26730.10
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyWarServer", "MyWarServer\MyWarServer.csproj", "{3FBE2820-59D3-4A9C-85C1-705B90ABF2FD}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common", "Common\Common.csproj", "{B5CEE45C-6A9E-4693-AB05-0846182735AE}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyWarCommon", "MyWarCommon\MyWarCommon.csproj", "{38D7CCD6-22CD-45DE-908F-25B97B826E8A}"
 EndProject
 Global
@@ -19,10 +17,6 @@ Global
 		{3FBE2820-59D3-4A9C-85C1-705B90ABF2FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3FBE2820-59D3-4A9C-85C1-705B90ABF2FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3FBE2820-59D3-4A9C-85C1-705B90ABF2FD}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B5CEE45C-6A9E-4693-AB05-0846182735AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B5CEE45C-6A9E-4693-AB05-0846182735AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B5CEE45C-6A9E-4693-AB05-0846182735AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B5CEE45C-6A9E-4693-AB05-0846182735AE}.Release|Any CPU.Build.0 = Release|Any CPU
 		{38D7CCD6-22CD-45DE-908F-25B97B826E8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{38D7CCD6-22CD-45DE-908F-25B97B826E8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{38D7CCD6-22CD-45DE-908F-25B97B826E8A}.Release|Any CPU.ActiveCfg = Release|Any CPU

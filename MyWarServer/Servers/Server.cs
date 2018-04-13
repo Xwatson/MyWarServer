@@ -73,9 +73,9 @@ namespace MyWarServer.Servers
         /// <param name="requestCode">请求code</param>
         /// <param name="data">数据</param>
         /// <param name="client">客户端</param>
-        public void SendResponse(RequestCode requestCode, string data, Client client)
+        public void SendResponse(ActionCode actionCode, string data, Client client)
         {
-            client.Send(requestCode, data);
+            client.Send(actionCode, data);
         }
         /// <summary>
         /// 处理请求

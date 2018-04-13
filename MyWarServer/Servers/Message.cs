@@ -81,10 +81,10 @@ namespace MyWarServer.Servers
         /// <param name="requestCode"></param>
         /// <param name="data"></param>
         /// <returns></returns>
-        public static byte[] PickResponseData(RequestCode requestCode, string data)
+        public static byte[] PickResponseData(ActionCode actionCode, string data)
         {
-            // 转换请求code
-            byte[] requestCodeBytes = BitConverter.GetBytes((int)requestCode);
+            // 转换方法code
+            byte[] requestCodeBytes = BitConverter.GetBytes((int)actionCode);
             // 转换数据
             byte[] dataBytes = Encoding.UTF8.GetBytes(data);
             // 数据总长度
