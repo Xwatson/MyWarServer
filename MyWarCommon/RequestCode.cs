@@ -11,5 +11,6 @@ namespace MyWarCommon
     public enum RequestCode
     {
         None, // 默认
+        User, // 用户Ctrl
     }
 }
