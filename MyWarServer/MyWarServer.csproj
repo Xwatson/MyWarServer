@@ -65,6 +65,9 @@
     <Compile Include="Controller\BaseController.cs" />
     <Compile Include="Controller\ControllerManager.cs" />
     <Compile Include="Controller\DefaultController.cs" />
+    <Compile Include="Controller\UserController.cs" />
+    <Compile Include="DAO\UserDAO.cs" />
+    <Compile Include="Model\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Servers\Client.cs" />
@@ -82,10 +85,7 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="DAO\" />
-    <Folder Include="Model\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\MyWarCommon\MyWarCommon.csproj">
       <Project>{38d7ccd6-22cd-45de-908f-25b97b826e8a}</Project>

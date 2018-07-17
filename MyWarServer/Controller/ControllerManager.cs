@@ -27,6 +27,7 @@ namespace MyWarServer.Controller
             // 向字典添加默认controller
             DefaultController defaultController = new DefaultController();
             controllerDic.Add(defaultController.RequestCode, defaultController);
+            controllerDic.Add(RequestCode.User, new UserController());
         }
         /// <summary>
         /// 处理请求

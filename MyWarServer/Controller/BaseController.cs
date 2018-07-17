@@ -10,7 +10,7 @@ namespace MyWarServer.Controller
 {
     abstract class BaseController
     {
-        RequestCode requestCode = RequestCode.None;
+        protected RequestCode requestCode = RequestCode.None;
         /// <summary>
         /// 默认requestCode
         /// </summary>
