@@ -12,14 +12,23 @@ namespace MyWarServer.Controller
 {
     class UserController : BaseController
     {
+        private UserDAO userDAO = new UserDAO();
         public UserController()
         {
             requestCode = RequestCode.User;
         }
-        public void Login(string data, Client client, Server server)
+        public string Login(string data, Client client, Server server)
         {
-            UserDAO userDAO = new UserDAO();
-            // User user = userDAO.VerifyUser()
+            string[] datas = data.Split(',');
+            User user = userDAO.VerifyUser(datas[0], datas[1]);
+            if (user != null)
+            {
+                return ((int)ReturnCode.Success).ToString();
+            }
+            else
+            {
+                return ((int)ReturnCode.Fail).ToString();
+            }
         }
     }
 }
