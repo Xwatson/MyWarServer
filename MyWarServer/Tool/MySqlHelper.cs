@@ -10,7 +10,7 @@ namespace MyWarServer.Tool
 {
     class MySqlHelper
     {
-        private static string connstr = @"Host=127.0.0.1;UserName=xwatson;Password=xws123123;Database=myWar;Port=3306;CharSet=utf8;Allow Zero Datetime=true";
+        private static string connstr = @"Host=localhost;UserName=mywargame;Password=mywargame123;Database=mywargame;Port=3306;CharSet=utf8;Allow Zero Datetime=true";
 
         #region 执行查询语句，返回MySqlDataReader
         /// <summary>
