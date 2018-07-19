@@ -31,7 +31,7 @@ namespace MyWarServer.DAO
             }
             catch (Exception e)
             {
-                Console.WriteLine("验证用户错误：", e);
+                Console.WriteLine("验证用户错误：" + e);
             }
             finally
             {

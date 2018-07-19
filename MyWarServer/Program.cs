@@ -11,8 +11,19 @@ namespace MyWarServer
     {
         static void Main(string[] args)
         {
-            Server server = new Server("127.0.0.1", 3318);
-            server.Start();
+            string host = "127.0.0.1";
+            int port = 3318;
+            try
+            {
+                Server server = new Server(host, port);
+                server.Start();
+                Console.WriteLine("服务器启动成功，请访问："+ host + "， 端口：" + port);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("服务启动失败：", e);
+            }
+            Console.ReadLine();
         }
     }
 }

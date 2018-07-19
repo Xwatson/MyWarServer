@@ -58,6 +58,7 @@ namespace MyWarServer.Servers
             Client client = new Client(clientSocket, this);
             client.Start();
             clientList.Add(client); // 持有所有client类
+            Console.WriteLine("接受到客户端：" + clientSocket.RemoteEndPoint);
         }
         public void RemoveClient(Client client)
         {
